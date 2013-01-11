@@ -1,4 +1,7 @@
+.prove
 Changes
+COPYRIGHT
+examples/show-command-line.pl
 HACKING
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm

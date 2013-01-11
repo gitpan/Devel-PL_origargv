@@ -19,6 +19,7 @@ module_name: Devel::PL_origargv
 name: Devel-PL_origargv
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt
@@ -30,4 +31,4 @@ resources:
   homepage: https://metacpan.org/release/Devel-PL_origargv
   license: http://dev.perl.org/licenses/
   repository: https://bitbucket.org/tobyink/p5-devel-pl_origargv
-version: 0.001
+version: 0.002
