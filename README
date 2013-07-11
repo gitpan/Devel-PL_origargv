@@ -20,6 +20,10 @@ DESCRIPTION
         Returns argv as a list of strings. If called in scalar context,
         returns argc (i.e. the count of argv).
 
+CAVEATS
+    This module's test suite will not pass when run via "forkprove". Use the
+    standard "prove" instead.
+
 BUGS
     Please report any bugs to
     <http://rt.cpan.org/Dist/Display.html?Queue=Devel-PL_origargv>.

@@ -1,0 +1,124 @@
+@prefix cpan:  <http://purl.org/NET/cpan-uri/person/> .
+@prefix cpant: <http://purl.org/NET/cpan-uri/terms#> .
+@prefix dbug:  <http://ontologi.es/doap-bugs#> .
+@prefix dc:    <http://purl.org/dc/terms/> .
+@prefix dcs:   <http://ontologi.es/doap-changeset#> .
+@prefix dist:  <http://purl.org/NET/cpan-uri/dist/Devel-PL_origargv/> .
+@prefix doap:  <http://usefulinc.com/ns/doap#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix nfo:   <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+dist:project
+	a                 doap:Project;
+	doap:name         "Devel-PL_origargv";
+	cpant:perl_version_from [
+		a nfo:FileDataObject;
+		a nfo:SourceCode;
+		rdfs:label "Devel::PL_origargv";
+		nfo:fileName "lib/Devel/PL_origargv.pm";
+		nfo:programmingLanguage "Perl";
+	];
+	cpant:readme_from [
+		a nfo:FileDataObject;
+		a nfo:SourceCode;
+		rdfs:label "Devel::PL_origargv";
+		nfo:fileName "lib/Devel/PL_origargv.pm";
+		nfo:programmingLanguage "Perl";
+	];
+	cpant:requires    "Inline::C"^^cpant:dsWithoutVersion;
+	cpant:test_requires "Test::More 0.61"^^cpant:dsWithVersion;
+	cpant:version_from [
+		a nfo:FileDataObject;
+		a nfo:SourceCode;
+		rdfs:label "Devel::PL_origargv";
+		nfo:fileName "lib/Devel/PL_origargv.pm";
+		nfo:programmingLanguage "Perl";
+	];
+	dc:contributor    cpan:tobyink;
+	doap:bug-database <http://rt.cpan.org/Dist/Display.html?Queue=Devel-PL_origargv>;
+	doap:created      "2012-11-06"^^xsd:date;
+	doap:developer    cpan:tobyink;
+	doap:download-page <https://metacpan.org/release/Devel-PL_origargv>;
+	doap:homepage     <https://metacpan.org/release/Devel-PL_origargv>;
+	doap:license      <http://dev.perl.org/licenses/>;
+	doap:maintainer   cpan:tobyink;
+	doap:programming-language "Perl";
+	doap:release      dist:v_0-001;
+	doap:release      dist:v_0-002;
+	doap:release      dist:v_0-003;
+	doap:repository   [
+		a doap:GitRepository;
+		doap:browse <https://github.com/tobyink/p5-devel-pl_origargv>;
+	];
+	doap:shortdesc    "access to the Perl interpreter's argv".
+
+dist:v_0-001
+	a                 doap:Version;
+	rdfs:label        "Initial release";
+	dc:identifier     "Devel-PL_origargv-0.001"^^xsd:string;
+	dc:issued         "2012-11-07"^^xsd:date;
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Devel-PL_origargv-0.001.tar.gz>;
+	doap:revision     "0.001"^^xsd:string.
+
+dist:v_0-002
+	a                 doap:Version;
+	dc:identifier     "Devel-PL_origargv-0.002"^^xsd:string;
+	dc:issued         "2013-01-11"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Addition;
+			rdfs:label "Include an example script in the distribution.";
+		];
+		dcs:item [
+			a dcs:Documentation;
+			rdfs:label "Document test suite.";
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Devel-PL_origargv-0.002.tar.gz>;
+	doap:revision     "0.002"^^xsd:string.
+
+dist:v_0-003
+	a                 doap:Version;
+	dc:identifier     "Devel-PL_origargv-0.003"^^xsd:string;
+	dc:issued         "2013-07-11"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Documentation;
+			rdfs:label "Note that test suite will not pass when run via `forkprove`.";
+		];
+		dcs:item [
+			a dcs:Bugfix;
+			rdfs:label "Rename the internal C functions because they conflict with functions from stdlib.h in some versions of gcc.";
+			dcs:fixes <http://purl.org/NET/cpan-uri/rt/ticket/86838>;
+			dcs:thanks cpan:sisyphus;
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Devel-PL_origargv-0.003.tar.gz>;
+	doap:revision     "0.003"^^xsd:string.
+
+cpan:sisyphus
+	a                 foaf:Person;
+	foaf:name         "Sisyphus";
+	foaf:nick         "SISYPHUS";
+	foaf:page         <https://metacpan.org/author/SISYPHUS>.
+
+cpan:tobyink
+	a                 foaf:Person;
+	foaf:name         "Toby Inkster";
+	foaf:mbox         <mailto:tobyink@cpan.org>;
+	foaf:nick         "TOBYINK";
+	foaf:page         <https://metacpan.org/author/TOBYINK>.
+
+<http://dev.perl.org/licenses/>
+	dc:title          "the same terms as the perl 5 programming language system itself".
+
+<http://purl.org/NET/cpan-uri/rt/ticket/86838>
+	a                 dbug:Issue;
+	dbug:id           "86838"^^xsd:string;
+	dbug:page         <https://rt.cpan.org/Ticket/Display.html?id=86838>.
+

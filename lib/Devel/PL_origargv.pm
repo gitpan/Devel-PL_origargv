@@ -5,20 +5,20 @@ use strict;
 use warnings;
 
 our $AUTHORITY = 'cpan:TOBYINK';
-our $VERSION   = '0.002';
+our $VERSION   = '0.003';
 
 use Inline C => q{
-	int _argc () {
+	int _my_argc () {
 		return PL_origargc;
 	}
-	char* _argv (int x) {
+	char* _my_argv (int x) {
 		return PL_origargv[x - 1];
 	}
 };
 
 sub get {
-	return _argc unless wantarray;
-	map _argv($_), 1 .. _argc;
+	return _my_argc unless wantarray;
+	map _my_argv($_), 1 .. _my_argc;
 }
 
 __PACKAGE__
@@ -53,6 +53,11 @@ Returns argv as a list of strings. If called in scalar context, returns argc
 (i.e. the count of argv).
 
 =back
+
+=head1 CAVEATS
+
+This module's test suite will not pass when run via C<forkprove>. Use
+the standard C<prove> instead.
 
 =head1 BUGS
 

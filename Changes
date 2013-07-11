@@ -6,6 +6,15 @@ Home page:    <https://metacpan.org/release/Devel-PL_origargv>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Devel-PL_origargv>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.003  2013-07-11
+
+ - (Bugfix) Rename the internal C functions because they conflict with
+   functions from stdlib.h in some versions of gcc.
+   Fixes RT#86838
+   ++$SISYPHUS
+ - (Documentation) Note that test suite will not pass when run via
+   `forkprove`.
+
 0.002  2013-01-11
 
  - (Addition) Include an example script in the distribution.
